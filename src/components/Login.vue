@@ -2,7 +2,8 @@
   <div>
     <div class="login">
        <a class="btn facebook" href="/login/facebook"> Login with Facebook</a>
-       <a class="btn twitter" href="/login/facebook"> Login with Twitter</a>
+       <a class="btn twitter" href="/login/twitter"> Login with Twitter</a>
+       <a class="btn google" href="/login/google"> Login with Google</a>
     </div>
     <v-form v-model="valid" ref="form" lazy-validation>
       <v-text-field
