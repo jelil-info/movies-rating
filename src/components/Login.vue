@@ -22,6 +22,7 @@
 </template>
 <script>
 import axios from 'axios';
+import bus from './../bus';
 
 export default {
   data: () => ({
@@ -46,9 +47,9 @@ export default {
           'Content-Type': 'application/json',
         },
       })
-        .then((response) => {
-          window.localStorage.setItem('auth', response.data.token);
+        .then(() => {
           this.$swal('Great!', 'You are ready to start!', 'success');
+          bus.$emit('refreshUser');
           this.$router.push({ name: 'Home' });
         })
         .catch((error) => {
